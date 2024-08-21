@@ -1,0 +1,21 @@
+//given an integer array , return the third distinct maximum number in the array . if the thid maximum does not exist then return the maximum number
+
+let arr=[3,2,6,78]
+
+
+
+function findNum(arr){
+    let set = new Set(arr) //removing duplicatets
+    let newArr= Array.from(set) //converting set to array
+    
+    newArr.sort((a,b)=>a-b)
+   if(newArr.length<3){
+    //condition where third maximum doesnt exists ie returning maximum
+    return newArr[newArr.length-1]
+   }else{
+   return newArr[newArr.length-3]
+   }
+}
+
+console.log(findNum(arr))
+
